@@ -1,0 +1,19 @@
+<article id="feedback" class="feedback">
+  <header>
+    <h1><%= @feedback.title %></h1>
+    <h2>Released: <%= @feedback.user.name %></h2>
+  </header>
+
+  <p>
+    <%= @feedback.description %>
+  </p>
+  
+  <footer>
+    <nav>
+      <%= link_to 'Edit', edit_feedback_path(@feedback), class: 'button' %>
+      <%= link_to 'Delete', @feedback, 
+                  class: 'button',
+                  method: :delete, data: { confirm: 'Are you sure?' } %>
+    </nav>
+  </footer>
+</article>

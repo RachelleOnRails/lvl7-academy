@@ -1,0 +1,18 @@
+<ul id="feedbacks">
+  <% @feedbacks.each do |feedback| %>
+    <li>
+      <article class="feedback">
+        <header>
+          <h2><%= link_to feedback.title, feedback %></h2>
+          <h3><%= feedback.user.name %></h3>
+        </header>
+        <p>
+          <%= truncate(feedback.description, length: 150, separator: ' ') %>
+        </p>
+        <footer>
+        </footer>
+      </article>
+    </li>
+  <% end %>
+</ul>
+

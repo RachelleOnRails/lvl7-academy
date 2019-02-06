@@ -1,0 +1,28 @@
+<%= form_for(@feedback) do |f| %>
+  <%= render 'shared/errors', object: @feedback %>
+
+  <fieldset>
+    <ol>
+      <li class="required">
+        <%= f.label :title %>
+        <%= f.text_field :title, autofocus: true %>
+      </li>
+      <li class="required">
+        <%= f.label :importance %>
+        <%= f.text_field :importance %>
+      </li>
+      <li class="required">
+        <%= f.label :description %>
+        <%= f.text_area :description, cols: 40, rows: 7 %>
+      </li>
+      <li class="required">
+        <%= f.label :email_address %>
+        <%= f.text_field :email_address %>
+      </li>
+    </ol>
+    <p>
+      <%= f.submit %>
+      <%= link_to "Cancel", feedbacks_path, class: 'button' %>
+    </p>
+  </fieldset>
+<% end %>
